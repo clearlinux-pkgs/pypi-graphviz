@@ -17,11 +17,11 @@ BuildRequires : buildreq-distutils3
 Provides: python-graphviz
 Provides: python-graphviz-python
 Provides: python-graphviz-python3
-BuildRequires : pluggy
+BuildRequires : pypi(pluggy)
 BuildRequires : py-python
 BuildRequires : pytest
 BuildRequires : tox
-BuildRequires : virtualenv
+BuildRequires : pypi(virtualenv)
 
 %description
 Graphviz
