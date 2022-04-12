@@ -4,7 +4,7 @@
 #
 Name     : pypi-graphviz
 Version  : 0.19.2
-Release  : 43
+Release  : 44
 URL      : https://files.pythonhosted.org/packages/c9/0a/f196d01638f61e1ea27d90ed6874001f9c2fb7dd6281102e4555225a8ae5/graphviz-0.19.2.zip
 Source0  : https://files.pythonhosted.org/packages/c9/0a/f196d01638f61e1ea27d90ed6874001f9c2fb7dd6281102e4555225a8ae5/graphviz-0.19.2.zip
 Summary  : Simple Python interface for Graphviz
@@ -61,7 +61,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1649476931
+export SOURCE_DATE_EPOCH=1649753753
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
