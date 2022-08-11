@@ -4,7 +4,7 @@
 #
 Name     : pypi-graphviz
 Version  : 0.20.1
-Release  : 49
+Release  : 50
 URL      : https://files.pythonhosted.org/packages/a5/90/fb047ce95c1eadde6ae78b3fca6a598b4c307277d4f8175d12b18b8f7321/graphviz-0.20.1.zip
 Source0  : https://files.pythonhosted.org/packages/a5/90/fb047ce95c1eadde6ae78b3fca6a598b4c307277d4f8175d12b18b8f7321/graphviz-0.20.1.zip
 Summary  : Simple Python interface for Graphviz
