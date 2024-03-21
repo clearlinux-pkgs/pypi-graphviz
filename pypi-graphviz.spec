@@ -6,13 +6,14 @@
 # autospec commit: f4bef72
 #
 Name     : pypi-graphviz
-Version  : 0.20.2
-Release  : 60
-URL      : https://files.pythonhosted.org/packages/d8/34/efb124a6d76ede3ad609dce96d7784a5dd460177560fe1a5f08a08fc912e/graphviz-0.20.2.zip
-Source0  : https://files.pythonhosted.org/packages/d8/34/efb124a6d76ede3ad609dce96d7784a5dd460177560fe1a5f08a08fc912e/graphviz-0.20.2.zip
+Version  : 0.20.3
+Release  : 61
+URL      : https://files.pythonhosted.org/packages/fa/83/5a40d19b8347f017e417710907f824915fba411a9befd092e52746b63e9f/graphviz-0.20.3.zip
+Source0  : https://files.pythonhosted.org/packages/fa/83/5a40d19b8347f017e417710907f824915fba411a9befd092e52746b63e9f/graphviz-0.20.3.zip
 Summary  : Simple Python interface for Graphviz
 Group    : Development/Tools
 License  : MIT
+Requires: pypi-graphviz-license = %{version}-%{release}
 Requires: pypi-graphviz-python = %{version}-%{release}
 Requires: pypi-graphviz-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
@@ -29,6 +30,14 @@ BuildRequires : pypi-virtualenv
 Graphviz
 ========
 |PyPI version| |License| |Supported Python| |Wheel| |Downloads|
+
+%package license
+Summary: license components for the pypi-graphviz package.
+Group: Default
+
+%description license
+license components for the pypi-graphviz package.
+
 
 %package python
 Summary: python components for the pypi-graphviz package.
@@ -50,10 +59,10 @@ python3 components for the pypi-graphviz package.
 
 
 %prep
-%setup -q -n graphviz-0.20.2
-cd %{_builddir}/graphviz-0.20.2
+%setup -q -n graphviz-0.20.3
+cd %{_builddir}/graphviz-0.20.3
 pushd ..
-cp -a graphviz-0.20.2 buildavx2
+cp -a graphviz-0.20.3 buildavx2
 popd
 
 %build
@@ -61,7 +70,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1710779719
+export SOURCE_DATE_EPOCH=1711032668
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -105,6 +114,8 @@ ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/pypi-graphviz
+cp %{_builddir}/graphviz-%{version}/LICENSE.txt %{buildroot}/usr/share/package-licenses/pypi-graphviz/36ee9d1a192a9394dc53939451517b6c3afb6abb || :
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -121,6 +132,10 @@ popd
 
 %files
 %defattr(-,root,root,-)
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/pypi-graphviz/36ee9d1a192a9394dc53939451517b6c3afb6abb
 
 %files python
 %defattr(-,root,root,-)
